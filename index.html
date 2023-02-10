@@ -1,68 +1,201 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="index.css">
-    <title>Reproductor de Musica</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Music Card UI using HTML, CSS(SCSS) and JavaScript - @codingtorque</title>
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 </head>
 
 <body>
-
-    <div class="container">
-        <img src="image1.jpg" alt="" class="blur-background-image">
-        <i class="material-icons">expand_more</i>
-        <span class="playing-title">Now Playing</span>
-
-        <div class="blur-background">
-            <img src="image1.jpg" alt="" id="music-img">
-            <h3 class="music-title">Believer</h3>
-            <span class="music-artist">Imagine Dragons</span>
-            <audio src="music1.mp3" id="music"></audio>
-
-            <div class="music-timeline">
-                <div class="progress-area"></div>
-                <span class="initial-time">3:14</span>
-                <span class="final-time">5:42</span>
+    <!-- further code in next block -->
+    <div class="music-app">
+        <div class="cover">
+            <div class="cover-title">
+                <p class="title">Tame Impala</p>
             </div>
-
-            <div class="play-pause-btns">
-                <i class="material-icons" id="loop-btn">repeat</i>
-                <i class="material-icons" id="skip-prev-btn">skip_previous</i>
-                <i class="material-icons" id="fast-rewind-btn">fast_rewind</i>
-
-                <div class="play-pause-btn">
-                    <i class="material-icons play">play_arrow</i>
-                    <!-- <i class="material-icons pause" id="pause-btn">pause</i> -->
+            <div class="artist"></div>
+            <button class="btn btn-search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-search">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="M21 21l-4.35-4.35" />
+                </svg>
+            </button>
+        </div>
+        <div class="content">
+            <div class="content-header">
+                <span class="content-title">Top Songs</span>
+                <button class="btn-all">all songs</button>
+            </div>
+            <ul class="playlist">
+                <li class="list-item">
+                    <img class="list-item-image"
+                        src="https://images.unsplash.com/photo-1567779013473-6cbdff716235?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2467&q=80"
+                        alt="song">
+                    <div class="list-item-info">
+                        <div class="info-title">Borderline</div>
+                        <div class="info-subtitle">Tame Impala</div>
+                    </div>
+                    <button class="btn-add">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-plus">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                    </button>
+                </li>
+                <li class="list-item">
+                    <img class="list-item-image"
+                        src="https://images.unsplash.com/photo-1470020618177-f49a96241ae7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+                        alt="song">
+                    <div class="list-item-info">
+                        <div class="info-title">The Less I Know The Better</div>
+                        <div class="info-subtitle">Tame Impala</div>
+                    </div>
+                    <button class="btn-add">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-plus">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                    </button>
+                </li>
+                <li class="list-item">
+                    <img class="list-item-image"
+                        src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
+                        alt="song">
+                    <div class="list-item-info">
+                        <div class="info-title">Let It Happen</div>
+                        <div class="info-subtitle">Tame Impala</div>
+                    </div>
+                    <button class="btn-add">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-plus">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+            <div class="content-header">
+                <span class="content-title">Albums</span>
+                <button class="btn-all">all albums</button>
+            </div>
+            <div class="album-list">
+                <div class="album-wrapper">
+                    <img src="https://images.unsplash.com/photo-1497911174120-042e550e7e0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2238&q=80"
+                        alt="album" class="album-cover">
+                    <div class="list-item-info">
+                        <div class="info-title">The Slow Rush</div>
+                        <div class="info-subtitle">Tame Impala</div>
+                    </div>
                 </div>
-
-                <span class="material-icons" id="fast-forwad-btn">fast_forwad</span>
-                <i class="material-icons" id="skip-next-btn">skip_next</i>
-                <i class="material-icons" id="music-list-btn">queue_music</i>
-            </div>
-            <div class="volume-box">
-                <i class="material-icons">volume_off</i>
-                <input type="range" min="0" max="1" step="0.1">
-                <i class="material-icons">volume_up</i>
-            </div>
-            <div class="all-music-list">
-                <span class="music-list-title">
-                    <i class="material-icons" id="music-list-btn">queue_music</i> Music list
-                </span>
-                <i class="material-icons" id="list-close-icon">Close</i>
-                <div class="all-music-box">
-                    <!-- Insert all Music in this Box -->
+                <div class="album-wrapper">
+                    <img src="https://images.unsplash.com/photo-1565021009519-22da0e21f65c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+                        alt="album" class="album-cover">
+                    <div class="list-item-info">
+                        <div class="info-title">Currents</div>
+                        <div class="info-subtitle">Tame Impala</div>
+                    </div>
+                </div>
+                <div class="album-wrapper">
+                    <img src="https://images.unsplash.com/photo-1574155088851-0c770818ba40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+                        alt="album" class="album-cover">
+                    <div class="list-item-info">
+                        <div class="info-title">Lonerism</div>
+                        <div class="info-subtitle">Tame Impala</div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="player">
+            <button class="btn btn-extend">
+            </button>
+            <div class="player-top-content">
+                <img class="list-item-image"
+                    src="https://images.unsplash.com/photo-1588465023238-f8951f48a1ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+                    alt="song">
+                <div class="list-item-info">
+                    <div class="info-title">Let It Happen</div>
+                    <div class="info-subtitle">Tame Impala</div>
+                </div>
+                <div class="buttons-wrapper">
+                    <button class="btn btn-play">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-play" fill="currentColor">
+                            <path d="M5 3l14 9-14 9V3z" />
+                        </svg>
+                    </button>
+                    <button class="btn btn-next">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="feather feather-skip-forward" width="14" height="14"
+                            viewBox="0 0 24 24">
+                            <defs />
+                            <path d="M5 4l10 8-10 8V4zM19 5v14" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="proggress-part">
+                <span class="time">01:24</span>
+                <div class="proggres-bar">
+                    <span class="progress"></span>
+                </div>
+                <span class="time">03:44</span>
+            </div>
+        </div>
+        <div class="player-screen">
+            <button class="btn btn-close">
+            </button>
+            <span class="top-text">Now Playing</span>
+            <div class="cover-wrapper">
+                <img class="cover-shadow"
+                    src="https://images.unsplash.com/photo-1588465023238-f8951f48a1ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80">
+                <img class="cover-img"
+                    src="https://images.unsplash.com/photo-1588465023238-f8951f48a1ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80">
+            </div>
+            <div class="song-info">
+                <p class="song-title">Let It Happen</p>
+                <p class="song-subtitle">Tame Impala</p>
+            </div>
+            <div class="proggress-part">
+                <span class="time">01:24</span>
+                <div class="proggres-bar">
+                    <span class="progress"></span>
+                </div>
+                <span class="time">03:44</span>
+            </div>
+            <div class="action-bar">
+                <button class="btn btn-repeat"></button>
+                <button class="btn btn-back"></button>
+                <button class="btn btn-rewind"></button>
+                <button class="play-button"></button>
+                <button class="btn btn-rewind-next"></button>
+                <button class="btn btn-play-next"></button>
+                <button class="btn btn-list"></button>
+            </div>
+            <div class="sound-bar">
+                <button class="btn btn-volume-down"></button>
+                <div class="proggres-bar volume">
+                    <span class="progress"></span>
+                </div>
+                <button class="btn btn-volume-up"></button>
+            </div>
+        </div>
     </div>
-<script src="data.js"></script>
-<script src="music.js"></script>
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
