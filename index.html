@@ -1,1 +1,68 @@
-"ReproductorMP3" 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="index.css">
+    <title>Reproductor de Musica</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="image1.jpg" alt="" class="blur-background-image">
+        <i class="material-icons">expand_more</i>
+        <span class="playing-title">Now Playing</span>
+
+        <div class="blur-background">
+            <img src="image1.jpg" alt="" id="music-img">
+            <h3 class="music-title">Believer</h3>
+            <span class="music-artist">Imagine Dragons</span>
+            <audio src="music1.mp3" id="music"></audio>
+
+            <div class="music-timeline">
+                <div class="progress-area"></div>
+                <span class="initial-time">3:14</span>
+                <span class="final-time">5:42</span>
+            </div>
+
+            <div class="play-pause-btns">
+                <i class="material-icons" id="loop-btn">repeat</i>
+                <i class="material-icons" id="skip-prev-btn">skip_previous</i>
+                <i class="material-icons" id="fast-rewind-btn">fast_rewind</i>
+
+                <div class="play-pause-btn">
+                    <i class="material-icons play">play_arrow</i>
+                    <!-- <i class="material-icons pause" id="pause-btn">pause</i> -->
+                </div>
+
+                <span class="material-icons" id="fast-forwad-btn">fast_forwad</span>
+                <i class="material-icons" id="skip-next-btn">skip_next</i>
+                <i class="material-icons" id="music-list-btn">queue_music</i>
+            </div>
+            <div class="volume-box">
+                <i class="material-icons">volume_off</i>
+                <input type="range" min="0" max="1" step="0.1">
+                <i class="material-icons">volume_up</i>
+            </div>
+            <div class="all-music-list">
+                <span class="music-list-title">
+                    <i class="material-icons" id="music-list-btn">queue_music</i> Music list
+                </span>
+                <i class="material-icons" id="list-close-icon">Close</i>
+                <div class="all-music-box">
+                    <!-- Insert all Music in this Box -->
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="data.js"></script>
+<script src="music.js"></script>
+
+</body>
+
+</html>
